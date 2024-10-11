@@ -1,0 +1,25 @@
+class CfgSounds
+{
+    sounds[] = {};
+    class zaton_night 
+    {
+        name = "zaton_night"
+        sound[] = {"music\zaton_night.ogg", 1, 1};
+    }
+};
+
+class CfgFunctions
+{
+	class HNDM
+	{
+		class Mission
+		{
+			class processScanner {
+				file = functions\fn_processScanner.sqf;
+			};
+			class giveRandomLoot {
+				file = functions\fn_giveRandomLoot.sqf;
+			};
+		};
+	};
+};
