@@ -1,24 +1,26 @@
 params["_caller","_scanner"];
-private["_scannerGroup","_scannerGroupName"];
+private["_scannerGroupName","_scannersLeft"];
 if (_scanner in scanners_tutorial) then {
-    _scannerGroup = scanners_tutorial;
-    _scannerGroupName = "(Mercenary base)";
+    _scannerGroupName = "Mercenary base";
+    scanners_tutorial = scanners_tutorial - [_scanner];
+    _scannersLeft = count scanners_tutorial;
 };
 if (_scanner in scanners_1) then {
-    _scannerGroup = scanners_1;
     _scannerGroupName = "Alpha";
+    scanners_1 = scanners_1 - [_scanner];
+    _scannersLeft = count scanners_1;
 };
 if (_scanner in scanners_2) then {
-    _scannerGroup = scanners_2;
     _scannerGroupName = "Bravo";
+    scanners_2 = scanners_2 - [_scanner];
+    _scannersLeft = count scanners_2;
 };
 if (_scanner in scanners_3) then {
-    _scannerGroup = scanners_3;
     _scannerGroupName = "Charlie";
+    scanners_3 = scanners_3 - [_scanner];
+    _scannersLeft = count scanners_3;
 };
-_scannerGroup = _scannerGroup - [_scanner];
-_scannersLeft = count _scannerGroup;
 private "_message";
-_message = format ["%1 collected data from a scanner (%2). %3 scanners left.", _caller, _scannerGroupName, _scannersLeft];
+_message = format ["%1 collected data from a scanner (%2). %3 scanners left.", name _caller, _scannerGroupName, _scannersLeft];
 [_message] remoteExec ["systemChat", 0];
 _message;

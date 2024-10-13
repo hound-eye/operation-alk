@@ -1,11 +1,13 @@
-class CfgSounds
+author			= "Houndeye";
+onLoadName		= "Operation Alkaline";
+onLoadMission	= "Science team hired a group of mercs to provide security with their research";
+loadScreen		= "images\logo.jpg";
+zeusCompositionScriptLevel = 2;
+class Header
 {
-    sounds[] = {};
-    class zaton_night 
-    {
-        name = "zaton_night"
-        sound[] = {"music\zaton_night.ogg", 1, 1};
-    }
+	gameType = "Coop";	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 13;	// maximum number of players the mission supports
 };
 
 class CfgFunctions

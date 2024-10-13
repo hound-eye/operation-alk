@@ -1,0 +1,1 @@
+hintC "Open map -> Briefing -> Mission Info for more information!";
